@@ -25,13 +25,13 @@ class Worker(
     val driver: WebDriver
 
     init {
-        driver = ChromeDriver()
+        //driver = ChromeDriver()
         val cap = DesiredCapabilities()
 
         cap.setCapability(ChromeOptions.CAPABILITY, OPTIONS)
         cap.browserName = "chrome"
 
-        //driver = RemoteWebDriver(URL(seleniumProdGridUrl), cap);
+        driver = RemoteWebDriver(URL(seleniumProdGridUrl), cap);
     }
 
     override fun toString(): String {
