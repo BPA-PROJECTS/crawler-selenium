@@ -1,0 +1,11 @@
+POST http://localhost:8300/api/admin/v1/workers/login
+accept: */*
+Content-Type: application/json
+
+{
+  "phoneNumber": "+7 958 593 8409",
+  "secretCode": ""
+}
+
+###
+

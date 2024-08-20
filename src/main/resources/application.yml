@@ -1,0 +1,25 @@
+server:
+  port: 8300
+
+spring:
+  application:
+    name: 'tg-crawler-selenium'
+  kafka:
+    bootstrap-servers: ${KAFKA_HOST}:${KAFKA_PORT}
+
+logging:
+  level:
+    org.springframework.kafka: info
+    org.apache.kafka: info
+    org:
+      hibernate:
+        type: trace
+    org.springframework.orm.jpa: INFO
+    org.springframework.transaction: INFO
+
+appsettings:
+  crawler:
+    reading-interval-seconds: 5
+    audit-worker-interval-milliseconds: 1000
+  telegram:
+    url: "https://web.telegram.org/k/"
