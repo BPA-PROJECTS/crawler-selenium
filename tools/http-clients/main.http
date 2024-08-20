@@ -1,0 +1,10 @@
+###
+
+# curl -X 'GET'
+#  'http://31.129.97.175:8300/main/worker/http%3A%2F%2F172.20.0.3%3A5555%2Fwd%2Fhub'
+#  -H 'accept: */*
+GET http://31.129.97.175:8300/main/worker/http://172.20.0.3:5555/wd/hub
+accept: */*
+
+###
+

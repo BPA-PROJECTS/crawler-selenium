@@ -2,6 +2,7 @@ package ru.isinsmartsoft.tgcrawlerselenium.service.telegram.timeout
 
 import org.springframework.stereotype.Service
 import ru.isinsmartsoft.tgcrawlerselenium.dao.enums.TimeoutReasonType
+import ru.isinsmartsoft.tgcrawlerselenium.tools.ctx.AppContext
 
 @Service
 class TimeoutServiceImpl : TimeoutService {
@@ -15,13 +16,17 @@ class TimeoutServiceImpl : TimeoutService {
         Thread.sleep(getTimeoutValue(type))
     }
 
-    override fun getTimeoutsMap(): Map<TimeoutReasonType, Long> {
-        return TimeoutReasonType.entries.associateWith { getTimeoutValue(it) }
+    override fun getTimeoutsMap(ctx: AppContext): Map<TimeoutReasonType, Long> {
+        return ctx.run("TimeoutService :: Get timeoutsMap") {
+            TimeoutReasonType.entries.associateWith { getTimeoutValue(it) }
+        }
     }
 
-    override fun editTimeoutsMap(timeoutsMap: Map<TimeoutReasonType, Long>) {
-        timeoutMap.forEach {
-            timeoutMap[it.key] = it.value
+    override fun editTimeoutsMap(ctx: AppContext, newTimeouts: Map<TimeoutReasonType, Long>) {
+        ctx.run("TimeoutService :: Edit timeoutsMap $newTimeouts") {
+            newTimeouts.forEach {
+                timeoutMap[it.key] = it.value
+            }
         }
     }
 

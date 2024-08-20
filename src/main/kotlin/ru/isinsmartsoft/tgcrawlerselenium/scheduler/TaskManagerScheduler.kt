@@ -1,6 +1,7 @@
 package ru.isinsmartsoft.tgcrawlerselenium.scheduler
 
 import io.github.oshai.kotlinlogging.KotlinLogging
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.context.ApplicationEventPublisher
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Service
@@ -12,6 +13,11 @@ import java.time.Instant
 
 
 @Service
+@ConditionalOnProperty(
+    name = ["appsettings.system.scheduler.crawler-read-chats"],
+    havingValue = "true",
+    matchIfMissing = false
+)
 class TaskManagerScheduler(
     private val crawlerProperties: CrawlerControlPanelProperties,
     private val publisher: ApplicationEventPublisher,

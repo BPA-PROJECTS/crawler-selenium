@@ -1,6 +1,7 @@
 package ru.isinsmartsoft.tgcrawlerselenium.dao.bo.worker
 
 import org.openqa.selenium.WebDriver
+import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.remote.DesiredCapabilities
 import org.openqa.selenium.remote.RemoteWebDriver
@@ -12,7 +13,7 @@ import java.net.URL
 import java.util.UUID
 
 val OPTIONS = ChromeOptions()
-var seleniumProdGridUrl = "http://selenium-hub:4444/wd/hub"
+var seleniumProdGridUrl = "http://31.129.97.175:4444/wd/hub"
 
 class Worker(
     val tgCredentials: TelegramAccountCredentialsBO,
@@ -24,13 +25,13 @@ class Worker(
     val driver: WebDriver
 
     init {
-        // driver = ChromeDriver()
+        driver = ChromeDriver()
         val cap = DesiredCapabilities()
 
         cap.setCapability(ChromeOptions.CAPABILITY, OPTIONS)
         cap.browserName = "chrome"
 
-        driver = RemoteWebDriver(URL(seleniumProdGridUrl), cap);
+        //driver = RemoteWebDriver(URL(seleniumProdGridUrl), cap);
     }
 
     override fun toString(): String {

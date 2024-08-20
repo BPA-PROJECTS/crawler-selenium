@@ -18,6 +18,9 @@ logging:
     org.springframework.transaction: INFO
 
 appsettings:
+  system:
+    scheduler:
+      crawler-read-chats: ${SCHEDULER_CRAWLER_READ_CHATS:false}
   crawler:
     reading-interval-seconds: 5
     audit-worker-interval-milliseconds: 1000

@@ -18,6 +18,6 @@ class TelegramMessageProducer(
     fun sendTelegramMessages(ctx: AppContext, readMessages: List<TelegramMessageDTO>) {
         ctx.startLevel("TelegramMessageProducer :: Send read telegram messages")
         kafkaTemplate.send(KafkaConstants.TOPIC_MESSAGES, MapperTool.mapper.writeValueAsString(readMessages))
-        ctx.endLevel("TelegramMessageProducer :: Send telegram messages , count = ${readMessages.size} } => Success") {}
+        ctx.endLevel("TelegramMessageProducer :: Send telegram messages , count = ${readMessages.size} => Success") {}
     }
 }
