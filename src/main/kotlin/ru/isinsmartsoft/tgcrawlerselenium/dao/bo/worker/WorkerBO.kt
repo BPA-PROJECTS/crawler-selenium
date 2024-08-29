@@ -13,28 +13,37 @@ import java.net.URL
 import java.util.UUID
 
 val OPTIONS = ChromeOptions()
-var seleniumProdGridUrl = "http://31.129.97.175:4444/wd/hub"
 
 class Worker(
     val tgCredentials: TelegramAccountCredentialsBO,
-    var state: AbstractWorkerState = NoneWorkerState(),
-    var pageState: WorkerPageState = WorkerPageState.NONE
+    isRemote: Boolean
 ) {
     val id: UUID = UUID.randomUUID()
-
+    var state: AbstractWorkerState
+    var pageState: WorkerPageState
     val driver: WebDriver
 
     init {
-        //driver = ChromeDriver()
-        val cap = DesiredCapabilities()
-
-        cap.setCapability(ChromeOptions.CAPABILITY, OPTIONS)
-        cap.browserName = "chrome"
-
-        driver = RemoteWebDriver(URL(seleniumProdGridUrl), cap);
+        this.state = NoneWorkerState()
+        this.pageState = WorkerPageState.NONE
+        this.driver = buildDriver(isRemote)
     }
 
     override fun toString(): String {
         return "Worker(id=$id , phoneNumber=${tgCredentials.phoneNumber}, pageState=$pageState, state=$state)"
+    }
+
+    private fun buildDriver(isRemote: Boolean): WebDriver {
+        return if (isRemote) {
+            val seleniumProdGridUrl = System.getenv("SELENIUM_PROD_GRID_URL")
+            val cap = DesiredCapabilities()
+
+            cap.setCapability(ChromeOptions.CAPABILITY, OPTIONS)
+            cap.browserName = "chrome"
+
+            RemoteWebDriver(URL(seleniumProdGridUrl), cap);
+        } else {
+            ChromeDriver()
+        }
     }
 }

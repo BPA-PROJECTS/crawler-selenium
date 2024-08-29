@@ -3,14 +3,16 @@ version: '3.8'
 services:
   back-tg-crawler-selenium:
     build:
-      context: .  # Контекст сборки - текущий каталог, где находится docker-compose.yml 1
+      context: .  # Контекст сборки - текущий каталог, где находится docker-compose.yml
       dockerfile: Dockerfile  # Путь к Docker-файлу для сборки образа
     networks:
       - tg_cluster_app_network
       - tg_cluster_kafka_network
     ports:
-      - "8300:8300"  # Перенаправление порта 8080 для доступа к Java-приложению
+      - "8300:8300"  # Перенаправление порта 8300 для доступа к Java-приложению
     restart: unless-stopped  # Перезапускать контейнер, если он не был явно остановлен
+    environment:
+      - SELENIUM_PROD_GRID_URL=${SELENIUM_PROD_GRID_URL}
 
 networks:
   tg_cluster_app_network:

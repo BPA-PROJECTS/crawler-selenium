@@ -19,6 +19,8 @@ logging:
 
 appsettings:
   system:
+    selenium:
+      is-remote: ${SELENIUM_IS_REMOTE}
     scheduler:
       crawler-read-chats: ${SCHEDULER_CRAWLER_READ_CHATS:false}
   crawler:

@@ -9,3 +9,4 @@ Content-Type: application/json
 
 ###
 
+export SELENIUM_PROD_GRID_URL="http://31.129.96.161:4444/wd/hub"

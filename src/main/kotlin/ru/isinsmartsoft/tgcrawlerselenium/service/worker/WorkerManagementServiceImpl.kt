@@ -2,6 +2,7 @@ package ru.isinsmartsoft.tgcrawlerselenium.service.worker
 
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.stereotype.Service
+import ru.isinsmartsoft.tgcrawlerselenium.config.business.SystemSeleniumProperties
 import ru.isinsmartsoft.tgcrawlerselenium.dao.bo.TelegramAccountCredentialsBO
 import ru.isinsmartsoft.tgcrawlerselenium.dao.bo.worker.Worker
 import ru.isinsmartsoft.tgcrawlerselenium.dao.bo.worker_state.FreeWorkerState
@@ -18,7 +19,8 @@ import java.util.concurrent.ConcurrentHashMap
 
 @Service
 class WorkerManagementServiceImpl(
-    private val telegramScenario: TelegramScenario
+    private val telegramScenario: TelegramScenario,
+    private val systemSeleniumProperties: SystemSeleniumProperties
 ) : WorkerManagementService {
     private val log = KotlinLogging.logger {}
 
@@ -27,7 +29,7 @@ class WorkerManagementServiceImpl(
     private val storageDraftWorkers = ConcurrentHashMap<UUID, Worker>()
 
     override fun createDraftWorker(ctx: AppContext, credentials: TelegramAccountCredentialsBO): UUID {
-        val worker = Worker(credentials)
+        val worker = Worker(credentials, systemSeleniumProperties.isRemote)
         telegramScenario.login(ctx, worker)
         storageDraftWorkers[worker.id] = worker
         return worker.id

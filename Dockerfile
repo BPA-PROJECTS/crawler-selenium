@@ -15,4 +15,4 @@ COPY build/libs/tg-crawler-selenium-1.0.0.jar /app/app.jar
 EXPOSE 8300
 
 # Команда для запуска Spring Boot приложения с указанием профилей
-CMD ["java", "-jar", "-Dspring.profiles.active=prod,prod", "app.jar"]
+CMD ["java", "-jar", "-Dspring.profiles.active=run-prod,params-prod", "app.jar"]
