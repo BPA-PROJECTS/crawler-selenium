@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="PROD" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+  <configuration default="false" name="DEV" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
     <option name="ACTIVE_PROFILES" value="run-dev,params-dev" />
     <module name="tg-crawler-selenium.main" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="ru.isinsmartsoft.tgcrawlerselenium.Application" />

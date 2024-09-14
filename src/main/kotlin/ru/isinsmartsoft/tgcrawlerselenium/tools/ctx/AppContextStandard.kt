@@ -5,7 +5,7 @@ import ru.isinsmartsoft.tgcrawlerselenium.tools.ctx.model.ExecutionNodeType
 import java.util.UUID
 
 data class AppContextStandard(
-    val requestId: UUID = UUID.randomUUID(),
+    override val requestId: UUID = UUID.randomUUID(),
 ) : AppContext {
 
     private val log = KotlinLogging.logger {}

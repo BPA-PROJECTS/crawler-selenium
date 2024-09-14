@@ -7,9 +7,9 @@ import java.util.concurrent.atomic.AtomicLong
 private const val defaultValueReadingInterval = Long.MAX_VALUE
 
 @Service
-class CrawlerControlPanelPropertiesImpl(
+class CrawlerControlPanelPropertiesServiceImpl(
     private val readingIntervalProperties: CrawlerProperties
-) : CrawlerControlPanelProperties {
+) : CrawlerControlPanelPropertiesService {
 
     @Volatile
     private var readingInterval: AtomicLong = AtomicLong(defaultValueReadingInterval)

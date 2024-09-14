@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Service
 import ru.isinsmartsoft.tgcrawlerselenium.dao.event.AuditWorkerEvent
 import ru.isinsmartsoft.tgcrawlerselenium.dao.event.CrawlerReadChatsEvent
-import ru.isinsmartsoft.tgcrawlerselenium.service.control_panel.CrawlerControlPanelProperties
+import ru.isinsmartsoft.tgcrawlerselenium.service.control_panel.CrawlerControlPanelPropertiesService
 import ru.isinsmartsoft.tgcrawlerselenium.tools.date.DateTool
 import java.time.Instant
 
@@ -19,7 +19,7 @@ import java.time.Instant
     matchIfMissing = false
 )
 class TaskManagerScheduler(
-    private val crawlerProperties: CrawlerControlPanelProperties,
+    private val crawlerProperties: CrawlerControlPanelPropertiesService,
     private val publisher: ApplicationEventPublisher,
 ) {
     private val log = KotlinLogging.logger {}

@@ -42,7 +42,7 @@ class CrawlerReadChatsListener(
             run {
                 val workerBox = runWorkersBoxMap[workerId]!!
                 workerBox.queue.addTask(
-                    telegramTaskService.createTaskReadChat(ctx, workerBox.worker, observedChatId)
+                    telegramTaskService.createTaskReadChat(ctx.copy(), workerBox.worker, observedChatId)
                 )
             }
         }

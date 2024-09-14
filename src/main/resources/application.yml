@@ -24,7 +24,7 @@ appsettings:
     scheduler:
       crawler-read-chats: ${SCHEDULER_CRAWLER_READ_CHATS:false}
   crawler:
-    reading-interval-seconds: 5
+    reading-interval-seconds: 30
     audit-worker-interval-milliseconds: 1000
   telegram:
     url: "https://web.telegram.org/k/"

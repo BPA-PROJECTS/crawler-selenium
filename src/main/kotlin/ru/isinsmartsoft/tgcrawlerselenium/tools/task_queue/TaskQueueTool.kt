@@ -4,7 +4,6 @@ import io.github.oshai.kotlinlogging.KotlinLogging
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import java.util.concurrent.PriorityBlockingQueue
-import java.util.concurrent.atomic.AtomicInteger
 
 private val log = KotlinLogging.logger {}
 
@@ -16,21 +15,17 @@ class TaskQueueTool(poolSize: Int, queueSize: Int) {
     // Очередь задач с ожиданием выполнения предыдущей
     private val queue: PriorityBlockingQueue<TaskWithPriority>
 
-    private val taskCount: AtomicInteger
-
     init {
         this.queue = PriorityBlockingQueue<TaskWithPriority>(
             queueSize, Comparator.comparing(TaskWithPriority::priority)
         )
         executor = Executors.newFixedThreadPool(poolSize)
-        taskCount = AtomicInteger(0)
         executor.execute {
             while (true) {
                 try {
                     if (!queue.isEmpty()) {
                         val task = queue.take()
                         task.run()
-                        taskCount.decrementAndGet()
                     }
                 } catch (e: Exception) {
                     log.error { "TaskQueueTool :: Error - ${e.message}" }
@@ -45,12 +40,11 @@ class TaskQueueTool(poolSize: Int, queueSize: Int) {
     fun addTask(task: TaskWithPriority) {
         if (!containsTask(task)) {
             queue.offer(task)
-            taskCount.incrementAndGet()
         }
     }
 
     fun getTasksCount(): Int {
-        return taskCount.get()
+        return queue.size;
     }
 
     /**

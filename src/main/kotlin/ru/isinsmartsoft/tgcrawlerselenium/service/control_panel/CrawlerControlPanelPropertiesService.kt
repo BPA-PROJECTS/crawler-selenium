@@ -1,6 +1,6 @@
 package ru.isinsmartsoft.tgcrawlerselenium.service.control_panel
 
-interface CrawlerControlPanelProperties {
+interface CrawlerControlPanelPropertiesService {
 
     // Взаимодействие с интервалом чтения чатов
     fun getReadingIntervalSeconds(): Long

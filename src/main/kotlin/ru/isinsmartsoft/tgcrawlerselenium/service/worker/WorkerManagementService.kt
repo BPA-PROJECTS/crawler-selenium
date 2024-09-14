@@ -22,6 +22,7 @@ interface WorkerManagementService {
     fun getWorkerBoxByIds(ctx: AppContext, workerIds: Set<UUID>): Map<UUID, WorkerBox>
 
     fun deleteDraftWorker(ctx: AppContext, workerId: UUID)
+
     fun deleteRunWorker(ctx: AppContext, workerId: UUID)
 
 }

@@ -36,6 +36,8 @@ class TelegramTaskServiceImpl(
                             log.info { "Message: chatId=${it.chatId}, personId=${it.personId} , text=${it.text} , sendAt=${it.sentAt}" }
                         }
                         telegramMessageProducer.sendTelegramMessages(ctx, readMessages)
+                    } else {
+                        log.info { "No messages in chatId=$chatId" }
                     }
                 }
             }
