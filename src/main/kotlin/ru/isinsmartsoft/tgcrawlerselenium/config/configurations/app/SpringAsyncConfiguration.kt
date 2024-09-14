@@ -1,4 +1,4 @@
-package ru.isinsmartsoft.tgcrawlerselenium.config.app
+package ru.isinsmartsoft.tgcrawlerselenium.config.configurations.app
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

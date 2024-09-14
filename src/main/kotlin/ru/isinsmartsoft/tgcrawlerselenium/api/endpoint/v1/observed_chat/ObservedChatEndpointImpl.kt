@@ -5,7 +5,7 @@ import ru.isinsmartsoft.tgcrawlerselenium.api.dao.request.v1.observed_chat.Obser
 import ru.isinsmartsoft.tgcrawlerselenium.api.dao.response.v1.observed_chat.ObservedChatResponseV1
 import ru.isinsmartsoft.tgcrawlerselenium.api.dao.response.v1.observed_chat.ObservedChatsReportResponseV1
 import ru.isinsmartsoft.tgcrawlerselenium.api.endpoint.v1.ObservedChatEndpoint
-import ru.isinsmartsoft.tgcrawlerselenium.constants.EndpointConstants
+import ru.isinsmartsoft.tgcrawlerselenium.config.constants.EndpointConstants
 import ru.isinsmartsoft.tgcrawlerselenium.service.observed_chats.ObservedChatService
 import ru.isinsmartsoft.tgcrawlerselenium.tools.ctx.AppContextStandard
 import ru.isinsmartsoft.tgcrawlerselenium.tools.ctx.AppContext

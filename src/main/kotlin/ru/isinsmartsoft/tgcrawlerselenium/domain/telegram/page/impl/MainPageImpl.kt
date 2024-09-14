@@ -4,7 +4,7 @@ import io.github.oshai.kotlinlogging.KotlinLogging
 import org.openqa.selenium.By
 import org.openqa.selenium.interactions.Actions
 import org.springframework.stereotype.Component
-import ru.isinsmartsoft.tgcrawlerselenium.config.business.TelegramProperties
+import ru.isinsmartsoft.tgcrawlerselenium.config.properties.business.TelegramProperties
 import ru.isinsmartsoft.tgcrawlerselenium.dao.bo.worker.Worker
 import ru.isinsmartsoft.tgcrawlerselenium.dao.enums.WorkerPageState
 import ru.isinsmartsoft.tgcrawlerselenium.domain.telegram.constants.TagTG

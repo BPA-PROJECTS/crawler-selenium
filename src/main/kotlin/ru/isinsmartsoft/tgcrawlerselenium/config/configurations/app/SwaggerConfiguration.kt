@@ -1,4 +1,4 @@
-package ru.isinsmartsoft.tgcrawlerselenium.config.app
+package ru.isinsmartsoft.tgcrawlerselenium.config.configurations.app
 
 import io.swagger.v3.oas.models.OpenAPI
 import io.swagger.v3.oas.models.info.Info
@@ -6,7 +6,7 @@ import org.springdoc.core.models.GroupedOpenApi
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import ru.isinsmartsoft.tgcrawlerselenium.config.constants.ApplicationConstants
-import ru.isinsmartsoft.tgcrawlerselenium.constants.EndpointConstants
+import ru.isinsmartsoft.tgcrawlerselenium.config.constants.EndpointConstants
 
 
 @Configuration

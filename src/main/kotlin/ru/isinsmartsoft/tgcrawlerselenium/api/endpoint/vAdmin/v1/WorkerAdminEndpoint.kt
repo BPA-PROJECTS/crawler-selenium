@@ -1,11 +1,11 @@
-package ru.isinsmartsoft.tgcrawlerselenium.api.endpoint.admin.v1
+package ru.isinsmartsoft.tgcrawlerselenium.api.endpoint.vAdmin.v1
 
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.web.bind.annotation.*
 import ru.isinsmartsoft.tgcrawlerselenium.api.dao.request.v1.CreateWorkerRequestV1
 import ru.isinsmartsoft.tgcrawlerselenium.api.dao.response.v1.worker.GetWorkersResponseV1
-import ru.isinsmartsoft.tgcrawlerselenium.constants.EndpointConstants
+import ru.isinsmartsoft.tgcrawlerselenium.config.constants.EndpointConstants
 import java.util.*
 
 @Tag(name = "Admin V1 | Авторизация для Worker")

@@ -1,8 +1,9 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="PROD - VPS" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-    <option name="ACTIVE_PROFILES" value="prod" />
+    <option name="ACTIVE_PROFILES" value="params-prod" />
+    <option name="ALTERNATIVE_JRE_PATH" value="corretto-17" />
     <module name="tg-crawler-selenium.main" />
-    <target name="root@31.129.97.175:22" />
+    <target name="ksergey@31.129.96.161:22" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="ru.isinsmartsoft.tgcrawlerselenium.Application" />
     <extension name="coverage">
       <pattern>

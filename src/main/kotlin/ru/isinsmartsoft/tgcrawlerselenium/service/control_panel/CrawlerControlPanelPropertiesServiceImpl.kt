@@ -1,7 +1,7 @@
 package ru.isinsmartsoft.tgcrawlerselenium.service.control_panel
 
 import org.springframework.stereotype.Service
-import ru.isinsmartsoft.tgcrawlerselenium.config.business.CrawlerProperties
+import ru.isinsmartsoft.tgcrawlerselenium.config.properties.business.CrawlerProperties
 import java.util.concurrent.atomic.AtomicLong
 
 private const val defaultValueReadingInterval = Long.MAX_VALUE

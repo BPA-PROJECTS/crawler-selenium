@@ -1,4 +1,4 @@
-package ru.isinsmartsoft.tgcrawlerselenium.config
+package ru.isinsmartsoft.tgcrawlerselenium.config.configurations
 
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.apache.kafka.clients.consumer.ConsumerConfig
@@ -11,7 +11,7 @@ import org.springframework.kafka.core.ConsumerFactory
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory
 
 @Configuration
-class KafkaConsumerConfig(
+class KafkaConsumerConfiguration(
     @Value("\${spring.kafka.bootstrap-servers}")
     private val bootstrapAddress: String
 ) {

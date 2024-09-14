@@ -1,4 +1,4 @@
-package ru.isinsmartsoft.tgcrawlerselenium.api.endpoint.admin.v1
+package ru.isinsmartsoft.tgcrawlerselenium.api.endpoint.vAdmin.v1
 
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag

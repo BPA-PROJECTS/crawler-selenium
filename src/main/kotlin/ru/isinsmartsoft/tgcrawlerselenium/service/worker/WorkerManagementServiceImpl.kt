@@ -2,7 +2,7 @@ package ru.isinsmartsoft.tgcrawlerselenium.service.worker
 
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.stereotype.Service
-import ru.isinsmartsoft.tgcrawlerselenium.config.business.SystemSeleniumProperties
+import ru.isinsmartsoft.tgcrawlerselenium.config.properties.business.SystemSeleniumProperties
 import ru.isinsmartsoft.tgcrawlerselenium.dao.bo.TelegramAccountCredentialsBO
 import ru.isinsmartsoft.tgcrawlerselenium.dao.bo.worker.Worker
 import ru.isinsmartsoft.tgcrawlerselenium.dao.bo.worker_state.FreeWorkerState

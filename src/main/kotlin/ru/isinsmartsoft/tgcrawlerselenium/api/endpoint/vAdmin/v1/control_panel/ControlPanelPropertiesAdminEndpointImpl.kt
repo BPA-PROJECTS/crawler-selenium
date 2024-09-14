@@ -1,9 +1,9 @@
-package ru.isinsmartsoft.tgcrawlerselenium.api.endpoint.admin.v1.control_panel
+package ru.isinsmartsoft.tgcrawlerselenium.api.endpoint.vAdmin.v1.control_panel
 
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.web.bind.annotation.*
-import ru.isinsmartsoft.tgcrawlerselenium.api.endpoint.admin.v1.ControlPanelPropertiesAdminEndpoint
-import ru.isinsmartsoft.tgcrawlerselenium.constants.EndpointConstants
+import ru.isinsmartsoft.tgcrawlerselenium.api.endpoint.vAdmin.v1.ControlPanelPropertiesAdminEndpoint
+import ru.isinsmartsoft.tgcrawlerselenium.config.constants.EndpointConstants
 import ru.isinsmartsoft.tgcrawlerselenium.service.control_panel.CrawlerControlPanelPropertiesService
 
 @RestController

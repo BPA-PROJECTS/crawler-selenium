@@ -5,7 +5,7 @@ import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
-import ru.isinsmartsoft.tgcrawlerselenium.constants.EndpointConstants
+import ru.isinsmartsoft.tgcrawlerselenium.config.constants.EndpointConstants
 import java.util.*
 
 @Tag(name = "V1 | Управление Worker")

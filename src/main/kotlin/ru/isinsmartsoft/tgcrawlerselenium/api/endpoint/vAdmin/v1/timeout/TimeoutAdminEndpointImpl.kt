@@ -1,9 +1,9 @@
-package ru.isinsmartsoft.tgcrawlerselenium.api.endpoint.admin.v1.timeout
+package ru.isinsmartsoft.tgcrawlerselenium.api.endpoint.vAdmin.v1.timeout
 
 import org.springframework.web.bind.annotation.RestController
 import ru.isinsmartsoft.tgcrawlerselenium.api.dao.request.v1.timeout.EditTimeoutsRequestV1
 import ru.isinsmartsoft.tgcrawlerselenium.api.dao.response.v1.timeout.GetTimeoutsResponseV1
-import ru.isinsmartsoft.tgcrawlerselenium.api.endpoint.admin.v1.TimeoutAdminEndpoint
+import ru.isinsmartsoft.tgcrawlerselenium.api.endpoint.vAdmin.v1.TimeoutAdminEndpoint
 import ru.isinsmartsoft.tgcrawlerselenium.service.telegram.timeout.TimeoutService
 import ru.isinsmartsoft.tgcrawlerselenium.tools.ctx.AppContextStandard
 

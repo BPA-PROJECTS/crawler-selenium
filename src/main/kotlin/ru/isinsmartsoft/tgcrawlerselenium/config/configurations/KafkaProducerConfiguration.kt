@@ -1,4 +1,4 @@
-package ru.isinsmartsoft.tgcrawlerselenium.config
+package ru.isinsmartsoft.tgcrawlerselenium.config.configurations
 
 import org.apache.kafka.clients.producer.ProducerConfig
 import org.apache.kafka.common.serialization.StringSerializer
@@ -10,7 +10,7 @@ import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.kafka.core.ProducerFactory
 
 @Configuration
-class KafkaProducerConfig(
+class KafkaProducerConfiguration(
     @Value("\${spring.kafka.bootstrap-servers}")
     private val bootstrapAddress: String
 ) {

@@ -1,10 +1,10 @@
-package ru.isinsmartsoft.tgcrawlerselenium.api.endpoint.admin.v1.worker
+package ru.isinsmartsoft.tgcrawlerselenium.api.endpoint.vAdmin.v1.worker
 
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.web.bind.annotation.RestController
 import ru.isinsmartsoft.tgcrawlerselenium.api.dao.request.v1.CreateWorkerRequestV1
 import ru.isinsmartsoft.tgcrawlerselenium.api.dao.response.v1.worker.GetWorkersResponseV1
-import ru.isinsmartsoft.tgcrawlerselenium.api.endpoint.admin.v1.WorkerAdminEndpoint
+import ru.isinsmartsoft.tgcrawlerselenium.api.endpoint.vAdmin.v1.WorkerAdminEndpoint
 import ru.isinsmartsoft.tgcrawlerselenium.api.mapper.v1.WorkerMapperV1
 import ru.isinsmartsoft.tgcrawlerselenium.dao.bo.TelegramAccountCredentialsBO
 import ru.isinsmartsoft.tgcrawlerselenium.dao.bo.worker.Worker
