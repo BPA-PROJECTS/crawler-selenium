@@ -1,1 +1,2 @@
 SELENIUM_IS_REMOTE: false
+SELENIUM_GRID_URL: http://localhost:4444/wd/hub

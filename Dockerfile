@@ -8,6 +8,12 @@ RUN apt-get update \
 # Установка рабочей директории в /app
 WORKDIR /app
 
+# Определение аргумента сборки
+ARG HOST_SELENIUM_GRID_URL
+
+# Установка переменной окружения на основе аргумента
+ENV SELENIUM_GRID_URL=${HOST_SELENIUM_GRID_URL}
+
 # Копирование драйвера и JAR-файла в контейнер
 COPY build/libs/tg-crawler-selenium-1.0.0.jar /app/app.jar
 

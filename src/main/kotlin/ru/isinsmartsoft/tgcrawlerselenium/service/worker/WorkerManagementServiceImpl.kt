@@ -14,7 +14,7 @@ import ru.isinsmartsoft.tgcrawlerselenium.exception.RunWorkerNotFoundException
 import ru.isinsmartsoft.tgcrawlerselenium.instrument.worker.WorkerBox
 import ru.isinsmartsoft.tgcrawlerselenium.instrument.worker.WorkerTaskQueue
 import ru.isinsmartsoft.tgcrawlerselenium.tools.ctx.AppContext
-import java.util.*
+import java.util.UUID
 import java.util.concurrent.ConcurrentHashMap
 
 @Service
@@ -29,7 +29,7 @@ class WorkerManagementServiceImpl(
     private val storageDraftWorkers = ConcurrentHashMap<UUID, Worker>()
 
     override fun createDraftWorker(ctx: AppContext, credentials: TelegramAccountCredentialsBO): UUID {
-        val worker = Worker(credentials, systemSeleniumProperties.isRemote)
+        val worker = Worker(credentials, systemSeleniumProperties.isRemote, systemSeleniumProperties.gridUrl)
         telegramScenario.login(ctx, worker)
         storageDraftWorkers[worker.id] = worker
         return worker.id

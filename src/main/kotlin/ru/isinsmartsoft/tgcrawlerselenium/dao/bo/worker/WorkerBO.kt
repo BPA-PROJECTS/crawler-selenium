@@ -19,7 +19,8 @@ val OPTIONS = ChromeOptions()
 
 class Worker(
     val tgCredentials: TelegramAccountCredentialsBO,
-    isRemote: Boolean
+    isRemote: Boolean = false,
+    seleniumGridUrl: String = "",
 ) {
     val id: UUID = UUID.randomUUID()
     var state: AbstractWorkerState
@@ -29,22 +30,21 @@ class Worker(
     init {
         this.state = NoneWorkerState()
         this.pageState = WorkerPageState.NONE
-        this.driver = buildDriver(isRemote)
+        this.driver = buildDriver(isRemote, seleniumGridUrl)
     }
 
     override fun toString(): String {
         return "Worker(id=$id , phoneNumber=${tgCredentials.phoneNumber}, pageState=$pageState, state=$state)"
     }
 
-    private fun buildDriver(isRemote: Boolean): WebDriver {
+    private fun buildDriver(isRemote: Boolean, seleniumGridUrl: String?): WebDriver {
         return if (isRemote) {
-            val seleniumProdGridUrl = System.getenv("SELENIUM_PROD_GRID_URL")
             val cap = DesiredCapabilities()
 
             cap.setCapability(ChromeOptions.CAPABILITY, OPTIONS)
             cap.browserName = "chrome"
-            log.info {"Selenium grid url: $seleniumProdGridUrl"}
-            RemoteWebDriver(URL(seleniumProdGridUrl), cap);
+            log.info { "Selenium grid url: $seleniumGridUrl" }
+            RemoteWebDriver(URL(seleniumGridUrl), cap);
         } else {
             ChromeDriver()
         }

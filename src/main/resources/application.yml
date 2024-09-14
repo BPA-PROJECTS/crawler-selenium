@@ -21,6 +21,7 @@ appsettings:
   system:
     selenium:
       is-remote: ${SELENIUM_IS_REMOTE}
+      grid-url: ${SELENIUM_GRID_URL}
     scheduler:
       crawler-read-chats: ${SCHEDULER_CRAWLER_READ_CHATS:false}
   crawler:
