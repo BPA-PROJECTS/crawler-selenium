@@ -1,4 +1,4 @@
-POST http://localhost:8300/api/v1/observed_chats
+POST {{host}}/api/v1/observed_chats
 accept: */*
 Content-Type: application/json
 

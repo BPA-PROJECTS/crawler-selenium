@@ -1,5 +1,6 @@
 package ru.isinsmartsoft.tgcrawlerselenium.dao.bo.worker
 
+import io.github.oshai.kotlinlogging.KotlinLogging
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
@@ -11,6 +12,8 @@ import ru.isinsmartsoft.tgcrawlerselenium.dao.bo.worker_state.NoneWorkerState
 import ru.isinsmartsoft.tgcrawlerselenium.dao.enums.WorkerPageState
 import java.net.URL
 import java.util.UUID
+
+private val log = KotlinLogging.logger {}
 
 val OPTIONS = ChromeOptions()
 
@@ -40,7 +43,7 @@ class Worker(
 
             cap.setCapability(ChromeOptions.CAPABILITY, OPTIONS)
             cap.browserName = "chrome"
-
+            log.info {"Selenium grid url: $seleniumProdGridUrl"}
             RemoteWebDriver(URL(seleniumProdGridUrl), cap);
         } else {
             ChromeDriver()

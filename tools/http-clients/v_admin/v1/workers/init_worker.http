@@ -1,4 +1,4 @@
-POST http://localhost:8300/api/admin/v1/workers/login
+POST {{host}}/api/admin/v1/workers/login
 accept: */*
 Content-Type: application/json
 
